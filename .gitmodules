@@ -1,0 +1,15 @@
+[submodule "homedir/.vim/pack/plugins/start/rust.vim"]
+	path = homedir/.vim/pack/plugins/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
+[submodule "homedir/.vim/pack/plugins/start/syntastic.vim"]
+	path = homedir/.vim/pack/plugins/start/syntastic.vim
+	url = https://github.com/vim-syntastic/syntastic
+[submodule "homedir/.vim/pack/plugins/ctrlp.vim"]
+	path = homedir/.vim/pack/plugins/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "homedir/.vim/pack/plugins/YouCompleteMe"]
+	path = homedir/.vim/pack/plugins/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe.git
+[submodule "nord-prompt"]
+	path = nord-prompt
+	url = git@github.com:RokasMuningis/nord-prompt.git
