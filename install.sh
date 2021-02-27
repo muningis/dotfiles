@@ -24,4 +24,12 @@ then
     mkdir ~/bin
     mv tmux-spotify-info/tmux-spotify-info ~/bin/tmux-spotify-enfo
 fi
-brew install spotify-tui
+
+if ! command limelight &> /dev/null
+then
+    mv limelight/bin/limelight ~/bin/limelight
+fi
+if ! command spt &> /dev/null
+then
+    brew install spotify-tui
+fi
