@@ -18,6 +18,10 @@ then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 fi
 
-git clone https://github.com/jdxcode/tmux-spotify-info.git
-mkdir ~/bin
-mv tmux-spotify-info/tmux-spotify-info ~/bin/tmux-spotify-info
+if ! command tmux-spotify-info &> /dev/null
+then 
+    git clone https://github.com/jdxcode/tmux-spotify-info.git
+    mkdir ~/bin
+    mv tmux-spotify-info/tmux-spotify-info ~/bin/tmux-spotify-enfo
+fi
+brew install spotify-tui
