@@ -2,7 +2,7 @@
 autoload -U compinit && compinit
 zmodload -i zsh/complist
 
-export PATH="$PATH:$HOME/bin"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH:$HOME/bin"
 export TERM=xterm
 
 for config (~/.zsh/*.zsh) source $config
