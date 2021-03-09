@@ -2,7 +2,8 @@
 
 echo "[.] Installing VSCode extensions"
 pkglist=(
-  pkief.material-icon-theme
+  pkief.material-icon-theme,
+  enkia.tokyo-night
 )
 
 for i in ${pkglist[@]}; do
