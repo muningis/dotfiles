@@ -6,19 +6,9 @@ echo "[.] Fixing permissions on zsh"
 sudo chmod -R 755 /usr/local/share/zsh
 sudo chmod -R 755 /usr/local/share/zsh/site-functions
 
-if [ ! -d ~/.dotfiles/nord-prompt ]; then		
-    echo "  [.] Getting Nord Prompt"		
-    git clone https://github.com/rokasmuningis/nord-prompt.git ~/.dotfiles/nord-prompt
-fi
-
 if [ ! -d ~/.dotfiles/homedir/.zsh_private ]; then
     echo "  [.] Creating folder for private zsh configs"
     mkdir ~/.dotfiles/homedir/.zsh_private
-fi
-
-if [ ! -f ~/.dotfiles/config/kitty/kitty_custom.conf ]; then
-    echo "  [.] Creating file for custom kitty conf"
-    touch ~/.dotfiles/config/kitty/kitty_custom.conf
 fi
 
 pushd homedir > /dev/null 2>&1
