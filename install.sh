@@ -24,18 +24,14 @@ then
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 fi
 
-if ! command tmux-spotify-info &> /dev/null
-then 
-    git clone https://github.com/jdxcode/tmux-spotify-info.git
-    mkdir ~/bin
-    mv tmux-spotify-info/tmux-spotify-info ~/bin/tmux-spotify-enfo
-fi
-
-if ! command limelight &> /dev/null
-then
-    mv limelight/bin/limelight ~/bin/limelight
-fi
 if ! command spt &> /dev/null
 then
+    echo "[.] Installing spotify-tui"
     brew install spotify-tui
+fi
+
+if ! command code &> /dev/null
+then
+    echo "[.] Installing VSCode"
+    brew install visual-studio-code --cask
 fi
