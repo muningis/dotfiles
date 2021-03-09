@@ -18,6 +18,12 @@ then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 fi
 
+if ! command -v cargo &> /dev/null
+then
+    echo "[.] Installing rust"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+fi
+
 if ! command tmux-spotify-info &> /dev/null
 then 
     git clone https://github.com/jdxcode/tmux-spotify-info.git

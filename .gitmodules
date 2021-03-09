@@ -13,6 +13,3 @@
 [submodule "nord-prompt"]
 	path = nord-prompt
 	url = git@github.com:RokasMuningis/nord-prompt.git
-[submodule "limelight"]
-	path = limelight
-	url = git@github.com:koekeishiya/limelight.git
