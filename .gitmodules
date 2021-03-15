@@ -1,3 +1,21 @@
 [submodule "nord-prompt"]
 	path = nord-prompt
 	url = git@github.com:RokasMuningis/nord-prompt.git
+[submodule "homedir/.vim/pack/plugins/start/tokyonight-vim"]
+	path = homedir/.vim/pack/plugins/start/tokyonight-vim
+	url = https://github.com/ghifarit53/tokyonight-vim
+[submodule "homedir/.vim/pack/plugins/start/nerdtree"]
+	path = homedir/.vim/pack/plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule "homedir/.vim/pack/plugins/start/vim-fugitive"]
+	path = homedir/.vim/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "homedir/.vim/pack/plugins/start/vim-airline"]
+	path = homedir/.vim/pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "homedir/.vim/pack/plugins/start/syntastic"]
+	path = homedir/.vim/pack/plugins/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic
+[submodule "homedir/.vim/pack/plugins/start/YouCompleteMe"]
+	path = homedir/.vim/pack/plugins/start/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe

@@ -34,8 +34,8 @@ schemes:
 colors: *tokyo-night
 window:
   padding:
-    x: 16
-    y: 16
+    x: 0
+    y: 0
   decorations: buttonless
 
 background_opacity: 0.66
@@ -54,3 +54,6 @@ font:
     style: Italic
 
   size: 16.0
+
+env:
+  TERM: xterm-256color

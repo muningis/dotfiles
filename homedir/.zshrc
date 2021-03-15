@@ -3,7 +3,7 @@ autoload -U compinit && compinit
 zmodload -i zsh/complist
 
 export PATH="$PATH:$HOME/bin"
-export TERM=xterm
+export TERM=xterm-256color
 
 for config (~/.zsh/*.zsh) source $config
 if [ ! -z "$(ls -A ~/.zsh_private)" ]; then
