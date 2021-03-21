@@ -7,3 +7,8 @@ git submodule update --init --recursive
 ./setup.sh
 python3 homedir/.vim/pack/plugins/start/YouCompleteMe/install.py --ts-completer --rust-completer
 ```
+
+## Installing VSCode extensions
+```bash
+./setup -v
+```

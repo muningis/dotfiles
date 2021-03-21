@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+while getopts "v" arg; do
+    case "${arg}" in
+        v) WITH_VS_CODE_EXT="t" ;;
+    esac
+done
 echo "[.] Starting setup"
 echo "[.] Installing dependencies"
 
@@ -72,16 +77,18 @@ for dir in *; do
 done
 
 popd > /dev/null 2>&1
+if [ "$WITH_VS_CODE_EXT" == "t" ]; then
 
-echo "[.] Installing VSCode extensions"
-pkglist=(
-  pkief.material-icon-theme,
-  enkia.tokyo-night
-)
+    echo "[.] Installing VSCode extensions"
+    pkglist=(
+        pkief.material-icon-theme,
+        enkia.tokyo-night
+    )
 
-for i in ${pkglist[@]}; do
-  echo "  [.] $i"
-  code --install-extension $i &> /dev/null
-done
+    for i in ${pkglist[@]}; do
+        echo "  [.] $i"
+        code --install-extension $i &> /dev/null
+    done
+fi
 
 echo "[.] Done!"
