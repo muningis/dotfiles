@@ -34,11 +34,11 @@ schemes:
 colors: *tokyo-night
 window:
   padding:
-    x: 0
-    y: 0
+    x: 16
+    y: 16
   decorations: buttonless
 
-background_opacity: 0.66
+background_opacity: 1
 
 font:
   normal:
