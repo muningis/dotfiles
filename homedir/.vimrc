@@ -56,7 +56,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Open terminal
-fu GetTerm()
+fu T()
     terminal
     res 20
     wincmd x
