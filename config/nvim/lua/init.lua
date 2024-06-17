@@ -68,6 +68,33 @@ local plugins = {
     config = function()
       require("config.lint")
     end
+  },{
+    "mfussenegger/nvim-dap",
+    config = function()
+      require("config.dap")
+    end
+  }, {
+    "rcarriga/nvim-dap-ui",
+    event = "VeryLazy",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+      "nvim-neotest/nvim-nio"
+    },
+    config = function()
+      require("config.dapui")
+    end
+  }, {
+    "nvim-neotest/neotest",
+    dependencies= {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "marilari88/neotest-vitest",
+    },
+    config = function()
+      require("config.neotest")
+    end
   }, {
     "catppuccin/nvim",
     name = "catppuccin",
