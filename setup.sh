@@ -15,6 +15,14 @@ command -v brew >/dev/null 2>&1 || {
   echo "  [.] Brew (latest)"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
+command -v tmux >/dev/null 2>&1 || {
+  echo "  [.] tmux (latest)"
+  /bin/bash -c "brew install tmux"
+}
+command -v bun >/dev/null 2>&1 || {
+  echo "  [.] bun (latest)"
+  curl -fsSL https://bun.sh/install | bash
+} 
 command -v nvm >/dev/null 2>&1 || {
 	echo "  [.] Node Version Mananger (v0.35.3)"
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
