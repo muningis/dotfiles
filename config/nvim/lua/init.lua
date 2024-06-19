@@ -71,12 +71,20 @@ local plugins = {
       require("config.nvim-tree")
     end
   }, {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("config.lualine")
+    end
+  }, {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost", "BufNewFile"},
     build = ":TSUpdate",
     config = function()
       require("config.treesitter")
     end,
+  }, {
+    "nvim-tree/nvim-web-devicons"
   }, {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
@@ -120,9 +128,15 @@ local plugins = {
     name = "catppuccin",
     priority = 1000,
     config = function()
+      require("catppuccin").setup({
+        transparent_background = true,
+        styles = {
+          comments = { "italic" },
+        },
+      })
       vim.cmd.colorscheme("catppuccin-mocha")
-       vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
      end,
   }
 }

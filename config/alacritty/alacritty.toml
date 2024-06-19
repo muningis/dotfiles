@@ -1,6 +1,4 @@
-import = [
-"~/.config/alacritty/catppuccin-mocha.toml"
-]
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -27,3 +25,11 @@ opacity = 0.85
 [window.padding]
 x = 16
 y = 16
+
+[keyboard]
+bindings = [
+  { key = "Right", mods = "Alt",      chars = "\u001bf"  },
+  { key = "Left",  mods = "Alt",      chars = "\u001bb"  },
+  { key = "Right", mods = "Command",  chars = "\u001bOF" },
+  { key = "Left",  mods = "Command",  chars = "\u001bOH" },
+]

@@ -1,0 +1,3 @@
+[submodule "homedir/.tmux/plugins/tpm"]
+	path = homedir/.tmux/plugins/tpm
+	url = git@github.com:tmux-plugins/tpm.git

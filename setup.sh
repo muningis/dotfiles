@@ -106,4 +106,6 @@ done
 
 popd > /dev/null 2>&1
 
+echo "[.] Running tmux plugins install script"
+/bin/bash -c "~/.tmux/plugins/tpm/scripts/install_plugins.sh"
 echo "[.] Done!"
