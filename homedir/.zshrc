@@ -12,7 +12,7 @@ export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
 alias code=codium
-
+alias node=''
 
 for config (~/.zsh/*.zsh) source $config
 if [ ! -z "$(ls -A $HOME/.zsh_private)" ]; then
