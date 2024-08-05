@@ -21,6 +21,7 @@ style = "Regular"
 [window]
 decorations = "buttonless"
 opacity = 0.85
+blur = true
 
 [window.padding]
 x = 16
