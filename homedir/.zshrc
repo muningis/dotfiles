@@ -18,3 +18,5 @@ for config (~/.zsh/*.zsh) source $config
 if [ ! -z "$(ls -A $HOME/.zsh_private)" ]; then
     for config (~/.zsh_private/*.zsh) source $config
 fi
+
+/usr/bin/ssh-add --apple-use-keychain ~/.ssh/id_ed25519
