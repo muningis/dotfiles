@@ -27,3 +27,5 @@
 	email = 28229273+muningis@users.noreply.github.com
 [push]
 	autoSetupRemote = true
+[credential]
+	helper = osxkeychain
