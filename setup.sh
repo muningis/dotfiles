@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+HOMEBREW_NO_INSTALL_UPGRADE=1
+HOMEBREW_NO_ENV_HINTS=1
+
 while getopts "v" arg; do
     case "${arg}" in
         v) WITH_VS_CODE_EXT="t" ;;
@@ -15,6 +18,10 @@ command -v brew >/dev/null 2>&1 || {
   echo "  [.] Brew (latest)"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
+command -v aerospace >/dev/null 2>&1 || {
+  echo "  [.] Aerospace"
+  brew install --cask nikitabobko/tap/aerospace
+}
 command -v tmux >/dev/null 2>&1 || {
   echo "  [.] tmux (latest)"
   /bin/bash -c "brew install tmux"
@@ -24,8 +31,8 @@ command -v bun >/dev/null 2>&1 || {
   curl -fsSL https://bun.sh/install | bash
 } 
 command -v nvm >/dev/null 2>&1 || {
-	echo "  [.] Node Version Mananger (v0.35.3)"
-	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+	echo "  [.] Node Version Mananger (v0.40.1)"
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 }
 command -v cargo >/dev/null 2>&1 || {
 	echo "  [.] Rust (latest)"
