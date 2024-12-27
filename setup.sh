@@ -18,6 +18,10 @@ command -v brew >/dev/null 2>&1 || {
   echo "  [.] Brew (latest)"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
+command -v ghostty >/dev/null 2>&1 || {
+  echo "  [.] Ghostty"
+  brew install ghostty
+}
 command -v aerospace >/dev/null 2>&1 || {
   echo "  [.] Aerospace"
   brew install --cask nikitabobko/tap/aerospace
@@ -29,7 +33,7 @@ command -v tmux >/dev/null 2>&1 || {
 command -v bun >/dev/null 2>&1 || {
   echo "  [.] bun (latest)"
   curl -fsSL https://bun.sh/install | bash
-} 
+}
 command -v nvm >/dev/null 2>&1 || {
 	echo "  [.] Node Version Mananger (v0.40.1)"
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
@@ -109,6 +113,12 @@ for dir in *; do
   fi
   unlink ~/.config/$dir > /dev/null 2>&1
   ln -s ~/.dotfiles/config/$dir ~/.config/$dir
+done
+
+echo "  [.] Creating sym-links for Rectangle Config"
+for dir in *; do
+  unlink ~/Library/Application\ Support/Rectangle/RectangleConfig.json > /dev/null 2>&1
+  ln -s ~/.dotfiles/rectangle/config.json ~/Library/Application\ Support/Rectangle/RectangleConfig.json
 done
 
 popd > /dev/null 2>&1
