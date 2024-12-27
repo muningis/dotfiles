@@ -1,13 +1,6 @@
 after-login-command = []
 after-startup-command = []
-
-exec-on-workspace-change = [
-  '/bin/bash',
-  '-c',
-  'sketchybar --trigger aerospace_workspace_change FOCUSED=$AEROSPACE_FOCUSED_WORKSPACE',
-]
-
-start-at-login = false
+start-at-login = true
 
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
@@ -15,7 +8,6 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 30
 
 default-root-container-layout = 'tiles'
-
 default-root-container-orientation = 'auto'
 
 [key-mapping]
@@ -28,7 +20,6 @@ outer.left = 16
 outer.bottom = 16
 outer.top = 16
 outer.right = 16
-
 
 [mode.main.binding]
 alt-slash = 'layout tiles horizontal vertical'
@@ -47,19 +38,19 @@ alt-shift-l = 'move right'
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
-alt-1 = 'workspace 1'                    # workspace one
-alt-2 = 'workspace 2'                    # workspace two
-alt-3 = 'workspace 3'                    # workspace three
-alt-4 = 'workspace 4'                    # workspace four
-alt-5 = 'workspace 5'                    # workspace five
-alt-b = 'workspace B'                    # browser
-alt-t = 'workspace T'                    # terminal
-alt-c = 'workspace C'                    # code editor
-alt-g = 'workspace G'                    # gaming
-alt-d = 'workspace D'                    # discord
-alt-s = 'workspace S'                    # slack1
-alt-m = 'workspace M'                    # music
-alt-o = 'workspace O'                    # obsidian
+alt-1 = 'workspace 1'   # workspace I
+alt-2 = 'workspace 2'   # workspace II
+alt-3 = 'workspace 3'   # workspace III
+alt-4 = 'workspace 4'   # workspace IV
+alt-5 = 'workspace 5'   # workspace V
+alt-b = 'workspace B'   # Browser
+alt-t = 'workspace T'   # Terminal
+alt-c = 'workspace C'   # Code Editor
+alt-g = 'workspace G'   # Gaming
+alt-d = 'workspace D'   # Discord
+alt-s = 'workspace S'   # Slack
+alt-m = 'workspace M'   # Music/Spotify
+alt-o = 'workspace O'   # Obsidian
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
@@ -97,13 +88,6 @@ up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
 alt-shift-semicolon = 'mode main'
 
-[[on-window-detected]]
-if.app-id = "dev.zed.Zed"
-run = "move-node-to-workspace C"
-
-[[on-window-detected]]
-if.app-id = "org.alacritty"
-run = 'move-node-to-workspace T'
 
 [[on-workspace-detected]]
 if.app-id = "com.mitchellh.ghostty"
