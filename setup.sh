@@ -18,18 +18,18 @@ command -v brew >/dev/null 2>&1 || {
   echo "  [.] Brew (latest)"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
-command -v ghostty >/dev/null 2>&1 || {
-  echo "  [.] Ghostty"
-  brew install ghostty
-}
+
 command -v aerospace >/dev/null 2>&1 || {
   echo "  [.] Aerospace"
   brew install --cask nikitabobko/tap/aerospace
 }
-command -v tmux >/dev/null 2>&1 || {
-  echo "  [.] tmux (latest)"
-  /bin/bash -c "brew install tmux"
+
+command -v spotify_player >/dev/null 2>&1 || {
+  echo "  [.] Spotify Player (lateset)"
+  brew install spotify_player
 }
+
+## Javascript/Typescript
 command -v bun >/dev/null 2>&1 || {
   echo "  [.] bun (latest)"
   curl -fsSL https://bun.sh/install | bash
@@ -38,13 +38,33 @@ command -v nvm >/dev/null 2>&1 || {
 	echo "  [.] Node Version Mananger (v0.40.1)"
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 }
+command -v nvim >/dev/null 2>&1 || {
+  echo "  [.] Neovim (latest)"
+  /bin/bash -c "brew install neovim"
+}
+
+## Zig
+command -v zig >/dev/null 2>&1 || {
+  echo "  [.] Zig (latest)"
+  brew install zig
+}
+
+## Rust
 command -v cargo >/dev/null 2>&1 || {
 	echo "  [.] Rust (latest)"
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 }
-command -v nvim >/dev/null 2>&1 || {
-  echo "  [.] Neovim (latest)"
-  /bin/bash -c "brew install neovim"
+
+## Zig
+
+## Terminal
+command -v ghostty >/dev/null 2>&1 || {
+  echo "  [.] Ghostty"
+  /bin/bash -c "brew install ghostty"
+}
+command -v tmux >/dev/null 2>&1 || {
+  echo "  [.] tmux (latest)"
+  /bin/bash -c "brew install tmux"
 }
 command -v fzf >/dev/null 2>&1 || {
   echo "  [.] fzf (latest)"
@@ -55,12 +75,16 @@ command -v delta >/dev/null 2>&1 || {
   /bin/bash -c "brew install git-delta"
 }
 command -v bat >/dev/null 2>&1 || {
-  echo "[.]  bat (latest)"
+  echo "[.] bat (latest)"
   /bin/bash -c "brew install bat"
 }
-command -v eza  > /dev/null 2>&1 || {
-  echo "[.]  eza (latest)"
+command -v eza >/dev/null 2>&1 || {
+  echo "[.] eza (latest)"
   /bin/bash -c "brew install eza"
+}
+command -v zellij >/dev/null 2>&1 || {
+  echo "[.] zellij (latest)"
+  /bin/bash -c "brew install zellij"
 }
 
 echo "[.] Setting up themes"

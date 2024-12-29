@@ -24,3 +24,12 @@ vim.opt.softtabstop = 2
 
 vim.opt.shortmess:append "sI"
 
+vim.api.nvim_create_autocmd({"TermOpen", "BufEnter"}, {
+  callback = function()
+      if vim.bo.buftype == 'terminal' then
+          vim.opt_local.number = false
+          vim.opt_local.relativenumber = false
+          vim.cmd('resize 10')
+      end
+  end
+})

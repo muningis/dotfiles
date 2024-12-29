@@ -7,7 +7,7 @@ zmodload -i zsh/complist
 
 export TERM=xterm-256color
 
-BINS_PATH="$HOME/.local/bin:/usr/local/go/bin"
+BINS_PATH="$HOME/.local/bin:/usr/local/go/bin:/usr/local/bin/zig"
 ANACONDA_PATH="/opt/homebrew/anaconda3/bin:/usr/local/anaconda3/bin"
 BUN_PATH="$HOME/.bun/bin"
 HOMEBREW_PATH="/opt/homebrew/opt/llvm/bin"

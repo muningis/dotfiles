@@ -12,7 +12,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     lazypath,
   })
 end
-vim.opt.rtp:prepend(lazypath)
+vim.opt.rtp:prepend(lazypath) 
 
 local plugins = {
   {
@@ -54,8 +54,33 @@ local plugins = {
       require("cmp").setup(opts)
     end
   }, {
+    "numToStr/Comment.nvim",
+    opts = {}, 
+    config = function()
+      require('Comment').setup()
+    end,
+  }, {
+    "stevearc/dressing.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+    config = function()
+      require("dressing").setup()
+    end,
+  }, {
+    "rebelot/kanagawa.nvim",
+    name = "kanagawa",
+    priority = 1000,
+    config = function()
+      require("kanagawa").setup({
+        commentStyle = { italic = true },
+      })
+      vim.cmd.colorscheme("kanagawa")
+      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+     end,
+  }, {
     "williamboman/mason.nvim",
-  },{
+  }, {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("config.mason")
@@ -77,69 +102,27 @@ local plugins = {
       require("config.lualine")
     end
   }, {
-    "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPost", "BufNewFile"},
-    build = ":TSUpdate",
-    config = function()
-      require("config.treesitter")
-    end,
-  }, {
-    "nvim-tree/nvim-web-devicons"
-  }, {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require("config.telescope")
     end,
-  },{
-    "mfussenegger/nvim-lint",
-    config = function()
-      require("config.lint")
-    end
-  },{
-    "mfussenegger/nvim-dap",
-    config = function()
-      require("config.dap")
-    end
-  }, {
-    "rcarriga/nvim-dap-ui",
-    event = "VeryLazy",
+  },
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
     dependencies = {
-      "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio"
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    opts = {
+      -- configurations go here
     },
     config = function()
-      require("config.dapui")
-    end
-  }, {
-    "nvim-neotest/neotest",
-    dependencies= {
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "marilari88/neotest-vitest",
-    },
-    config = function()
-      require("config.neotest")
-    end
-  }, {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      require("catppuccin").setup({
-        transparent_background = true,
-        styles = {
-          comments = { "italic" },
-        },
-      })
-      vim.cmd.colorscheme("catppuccin-mocha")
-      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-     end,
-  }
+      require("config.barbecue")
+    end,
+  },
 }
 
 require("lazy").setup(plugins)
-

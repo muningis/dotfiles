@@ -37,10 +37,15 @@ vim.keymap.set("n", "<leader>fm", function()
   vim.lsp.buf.format { async = true }
 end)
 
--- Escape From The Terminal
+-- Terminal
 vim.keymap.set("t", "<C-x>", vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true))
+vim.keymap.set('n', '<leader>tt', ':belowright split | terminal<CR>')
 
 -- Tree
 vim.keymap.set("n", "<C-n>", "<cmd> NvimTreeToggle <CR>")
 vim.keymap.set("n", "<leader>e", "<cmd> NvimTreeFocus <CR>")
+
+-- Indention
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
