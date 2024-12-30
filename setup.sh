@@ -55,8 +55,6 @@ command -v cargo >/dev/null 2>&1 || {
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 }
 
-## Zig
-
 ## Terminal
 command -v ghostty >/dev/null 2>&1 || {
   echo "  [.] Ghostty"
@@ -128,7 +126,12 @@ pushd config > /dev/null 2>&1
 echo "  [.] Creating sym-links for configs"
 for dir in *; do
   if [ ! -d "${dir}" ]; then
-    continue
+    if [[ -f ~/.config/$dir ]]; then
+      mkdir -p ~/.config_backup/$now
+      mv ~/.config/$dir ~/.config_backup/$now/$dir
+    fi
+    unlink ~/.config/$dir > /dev/null 2>&1
+    ln ~s /.dotfiles/config/$dir ~/.config/$dir
   fi
   echo "    [.] Copying/updating ${dir}"
   if [[ -d ~/.config/$dir ]]; then
@@ -139,14 +142,3 @@ for dir in *; do
   ln -s ~/.dotfiles/config/$dir ~/.config/$dir
 done
 
-echo "  [.] Creating sym-links for Rectangle Config"
-for dir in *; do
-  unlink ~/Library/Application\ Support/Rectangle/RectangleConfig.json > /dev/null 2>&1
-  ln -s ~/.dotfiles/rectangle/config.json ~/Library/Application\ Support/Rectangle/RectangleConfig.json
-done
-
-popd > /dev/null 2>&1
-
-echo "[.] Running tmux plugins install script"
-/bin/bash -c "~/.tmux/plugins/tpm/scripts/install_plugins.sh"
-echo "[.] Done!"
