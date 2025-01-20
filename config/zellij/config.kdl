@@ -408,4 +408,5 @@ load_plugins {
 //
 // support_kitty_keyboard_protocol false
 
-theme "kanagawa"
+theme "catppuccin-mocha"
+

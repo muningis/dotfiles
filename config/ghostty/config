@@ -2,7 +2,7 @@
 font-family = "DankMono Nerd Font"
 font-size = 16
 
-theme = "Kanagawa Wave"
+theme = catppuccin-mocha
 
 ## Window styling
 macos-titlebar-style = "hidden"

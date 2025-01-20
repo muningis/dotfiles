@@ -24,6 +24,12 @@ command -v aerospace >/dev/null 2>&1 || {
   brew install --cask nikitabobko/tap/aerospace
 }
 
+command -v borders >/dev/null 2>&1 || {
+  echo "  [.] Borders"
+  brew tap FelixKratz/formulae
+  brew install borders
+}
+
 command -v spotify_player >/dev/null 2>&1 || {
   echo "  [.] Spotify Player (lateset)"
   brew install spotify_player
